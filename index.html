@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQalendar</title>
+        <script type="text/javascript" src="jquery/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="jquery/jquery-ui-1.8.24.custom.min.js"></script>
+        <script type="text/javascript" src="jQalendar.js"></script>
+        <link rel="stylesheet" type="text/css" href="master_reset.css"/>
+        <link rel="stylesheet" type="text/css" href="default.css"/>
+        <link rel="stylesheet" type="text/css" href="jQalendar.css"/>
+        <script type="text/javascript">
+            function goToDate(){
+                console.log('inside');
+                year = $('input[name=year]').val();
+                month = $('select[name=month]').val();
+
+                if(!/^\d{4}$/.test(year))
+                    return;
+                if(!/^\d{1,2}$/.test(month) || month > 11)
+                    return;
+
+                redrawCalendar(year, month);
+            }
+        </script>
+    </head>
+    <body>
+        <div align="center">
+            <h1>Magesh Ravi's jQalendar</h1>
+            <form>
+                <input type="text" name="year" value="2012"/>
+                <select name="month">
+                    <option value="0">January</option>
+                    <option value="1">February</option>
+                    <option value="2">March</option>
+                    <option value="3">April</option>
+                    <option value="4">May</option>
+                    <option value="5">June</option>
+                    <option value="6">July</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">October</option>
+                    <option value="10">November</option>
+                    <option value="11">December</option>
+                </select>
+                <input type="button" value="Go" onclick="goToDate()"/>
+            </form>
+            <div id="monthly" class="calendar">
+                
+            </div>
+        </div>
+        <div id="json_bookings" style="display:none">
+            [
+                { "From":"2012-10-14 10:30:00", "To":"2012-10-14 12:30:00", "Title":"Booking 1", "Desc":"Description" },
+                { "From":"2012-10-14 13:30:00", "To":"2012-10-14 15:30:00", "Title":"Booking 2", "Desc":"Description" },
+                { "From":"2012-10-15 12:15:00", "To":"2012-10-15 14:15:00", "Title":"Booking 3", "Desc":"Description" },
+                { "From":"2012-10-17 11:30:00", "To":"2012-10-17 13:45:00", "Title":"Booking 4", "Desc":"Description" },
+                { "From":"2012-10-18 18:00:00", "To":"2012-10-19 12:00:00", "Title":"Booking 5", "Desc":"Description" },
+                { "From":"2012-10-20 19:00:00", "To":"2012-10-21 11:00:00", "Title":"Booking 6", "Desc":"Description" },
+                { "From":"2012-10-21 22:00:00", "To":"2012-10-22 03:00:00", "Title":"Booking 7", "Desc":"Description" },
+                { "From":"2012-10-22 11:00:00", "To":"2012-10-24 14:00:00", "Title":"Booking 8", "Desc":"Description" },
+                { "From":"2012-11-14 10:00:00", "To":"2012-11-14 11:00:00", "Title":"Magesh Ravi", "Desc":"Description" }
+            ]
+        </div>
+    </body>
+</html>

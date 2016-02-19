@@ -1,0 +1,158 @@
+/* For built-in tags */
+/* Copyrights (c) 2012 Magesh Ravi */
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Numans';
+    src: url('Numans/Numans-Regular.ttf');
+}
+
+body {
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(127,127,127,0.65) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(127,127,127,0.65))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(127,127,127,0.65) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(127,127,127,0.65) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(127,127,127,0.65) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(127,127,127,0.65) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a67f7f7f',GradientType=0 ); /* IE6-9 */
+}
+.clearer {
+    clear: both;
+}
+.calendar {
+    width: 960px;
+    font-family: 'Numans', sans-serif;
+}
+.calendar .day-names {
+    color: white;
+    font-size: 1.3em;
+
+    background: #e0a8ab; /* Old browsers */
+    background: -moz-linear-gradient(top,  #e0a8ab 0%, #ca2a34 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e0a8ab), color-stop(100%,#ca2a34)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #e0a8ab 0%,#ca2a34 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #e0a8ab 0%,#ca2a34 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #e0a8ab 0%,#ca2a34 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #e0a8ab 0%,#ca2a34 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0a8ab', endColorstr='#ca2a34',GradientType=0 ); /* IE6-9 */
+}
+    .calendar .day-names ul.week > li {
+        padding-top: 20px;
+        min-height: 60px;
+    }
+.calendar .week-days {
+    height: 86px;
+    overflow: hidden;
+}
+.calendar .day-names,
+.calendar .week-days {
+    border-bottom: 1px solid #DDD;
+    background-color: white;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+}
+.calendar ul.week {
+    list-style: none;
+}
+.calendar ul.week > li {
+    border-left: 1px solid #DDD;
+    padding: 5px;
+    width: 109px;
+    min-height: 75px;
+    list-style: none;
+    float: left;
+
+    transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+}
+    .calendar ul.week > li:first-child {
+        border-left: none;
+        width: 110px;
+    }
+    .calendar .week-days ul.week > li:hover {
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+        
+        transition: all .2s ease-in;
+        -webkit-transition: all .2s ease-in;
+    }
+.calendar .week-days ul.week > li:first-child {
+    background-color: rgb(255,255,224); /* lightyellow */
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+    .calendar .week-days ul.week > li:first-child:hover {
+        background-color: white;
+        box-shadow: inset -2px 0px 5px rgba(0, 0, 0, 0.15);
+    }
+    .calendar ul.week > li:first-child span {
+        opacity: 0;
+        transition: opacity .3s ease-out;
+        -webkit-transition: opacity .3s ease-out;
+    }
+    .calendar ul.week > li:first-child:hover span {
+        opacity: 1;
+        transition: opacity .3s ease-in;
+        -webkit-transition: opacity .3s ease-in;
+    }
+.calendar ul.week > li.weekend {
+    background-color: #EEE;
+}
+.calendar ul.week > li p.date {
+    margin:0px;
+    padding: 3px;
+    color: gray;
+    text-align: right;
+}
+.calendar ul.week > li p.booking {
+    margin: 0px 0px 1px 0px;
+    padding: 3px;
+    color: white;
+    background-color:rgba(45,175,235,0.5);
+
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+}
+.calendar ul.hour {
+    list-style: none;
+    background-color: white;
+}
+    .calendar li.weekend ul.hour {
+        background-color: inherit;
+    }
+.calendar ul.hour li {
+    border-bottom: 1px solid #EEE;
+    padding: 2px;
+    height: 1.1em;
+    text-align: right;
+}
+    .calendar li.weekend ul.hour li {
+        border-bottom: 1px solid #F4F4F4;
+    }
+.calendar ul.hour li:nth-child(4n) {
+    border-bottom: 1px solid #DDD;
+}
+    .calendar li.weekend ul.hour li:nth-child(4n) {
+        border-bottom: 1px solid white;
+    }
+.calendar ul.hour li.booking {
+    border-bottom: 1px solid rgba(45,175,235,0.75);
+    background-color: rgba(45,175,235,0.5);
+}
+    .calendar ul.hour li.booking.time {
+        color: white;
+        text-align: center;
+    }
+    .calendar ul.hour li.booking.start.time {
+        border-top: 1px solid rgba(45,175,235,0.75);
+        border-radius: 5px 5px 0px 0px;
+    }
+    .calendar ul.hour li.booking.end.time {
+        border-radius: 0px 0px 5px 5px;
+    }
+    .calendar ul.hour li.booking.new {
+        background-color: rgba(199,111,186,0.5);
+    }
+.copyrights {
+    font-size: 0.875em;
+    text-align: center;
+}
